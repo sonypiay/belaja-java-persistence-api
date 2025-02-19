@@ -26,6 +26,10 @@ public class Customer {
     @Enumerated(EnumType.STRING)
     private CustomerType type;
 
+    @Transient
+    @Column(name = "fullname")
+    private String fullName;
+
     public String getId() {
         return id;
     }
@@ -72,5 +76,13 @@ public class Customer {
 
     public void setType(CustomerType type) {
         this.type = type;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 }

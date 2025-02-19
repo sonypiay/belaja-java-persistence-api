@@ -9,12 +9,12 @@ import programmerzamannow.jpa.util.JpaUtil;
 
 import java.util.UUID;
 
-public class ColumnTest {
+public class TransientTest {
 
     private EntityManagerFactory entityManagerFactory = JpaUtil.getEntityManagerFactory();
 
     @Test
-    void testColumn() {
+    void testTransient() {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction entityTransaction = entityManager.getTransaction();
         entityTransaction.begin();
