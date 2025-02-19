@@ -10,7 +10,7 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Integer id;
 
     private String name;
 
@@ -24,11 +24,11 @@ public class Category {
     @Column(name = "updated_at")
     private Calendar updatedAt;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
