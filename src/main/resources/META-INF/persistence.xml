@@ -11,6 +11,9 @@
         <!-- Entity Classes -->
         <class>programmerzamannow.jpa.entity.Customer</class>
         <class>programmerzamannow.jpa.entity.Category</class>
+        <class>programmerzamannow.jpa.entity.Images</class>
+        <class>programmerzamannow.jpa.entity.Member</class>
+        <class>programmerzamannow.jpa.entity.Department</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
