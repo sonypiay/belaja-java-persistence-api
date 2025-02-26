@@ -34,6 +34,9 @@ public class Member {
     @Column(name = "value")
     private Map<String, Integer> skills;
 
+    @Transient
+    private String fullName;
+
     public String getId() {
         return id;
     }
@@ -72,5 +75,23 @@ public class Member {
 
     public void setSkills(Map<String, Integer> skills) {
         this.skills = skills;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    @PostLoad
+    public void postLoad() {
+        fullName = name.getTitle()
+                + ". "
+                + name.getFirstName()
+                + " "
+                + name.getMiddleName()
+                + " " + name.getLastName();
     }
 }
