@@ -1,12 +1,17 @@
 package programmerzamannow.jpa.entity;
 
 import jakarta.persistence.*;
+import programmerzamannow.jpa.listener.UpdatedAtListener;
 
+import java.time.LocalDateTime;
 import java.util.Calendar;
 
 @Entity
 @Table(name = "categories")
-public class Category {
+@EntityListeners({
+        UpdatedAtListener.class
+})
+public class Category implements UpdateAtAware {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,9 +25,8 @@ public class Category {
     @Column(name = "created_at")
     private Calendar createdAt;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at")
-    private Calendar updatedAt;
+    private LocalDateTime updatedAt;
 
     public Integer getId() {
         return id;
@@ -56,11 +60,11 @@ public class Category {
         this.createdAt = createdAt;
     }
 
-    public Calendar getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Calendar updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

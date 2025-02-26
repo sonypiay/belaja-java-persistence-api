@@ -7,26 +7,23 @@ import org.junit.jupiter.api.Test;
 import programmerzamannow.jpa.entity.Category;
 import programmerzamannow.jpa.util.JpaUtil;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Calendar;
-import java.util.UUID;
 
-public class TimestampTest {
+public class EntityListenerTest {
 
     private EntityManagerFactory entityManagerFactory = JpaUtil.getEntityManagerFactory();
 
     @Test
-    void testTimestamp() {
+    void insert() {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction entityTransaction = entityManager.getTransaction();
         entityTransaction.begin();
 
         Category category = new Category();
-        category.setName("Food");
-        category.setDescription("Food delicious");
+        category.setName("Contoh");
+        category.setDescription("Contoh Listener updated at");
         category.setCreatedAt(Calendar.getInstance());
-        category.setUpdatedAt(LocalDateTime.now());
         entityManager.persist(category);
 
         entityTransaction.commit();
