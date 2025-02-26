@@ -9,6 +9,7 @@ import programmerzamannow.jpa.entity.Name;
 import programmerzamannow.jpa.util.JpaUtil;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class CollectionTest {
 
@@ -38,6 +39,41 @@ public class CollectionTest {
         member.getHobbies().add("Coding");
         member.getHobbies().add("Gaming");
         entityManager.persist(member);
+
+        entityTransaction.commit();
+        entityManager.close();
+        entityManagerFactory.close();
+    }
+
+    @Test
+    void update() {
+        EntityManagerFactory entityManagerFactory = JpaUtil.getEntityManagerFactory();
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+
+        Member member = entityManager.find(Member.class, 2);
+        member.getHobbies().add("Traveling");
+        entityManager.merge(member);
+
+        entityTransaction.commit();
+        entityManager.close();
+        entityManagerFactory.close();
+    }
+
+    @Test
+    void updateSkills() {
+        EntityManagerFactory entityManagerFactory = JpaUtil.getEntityManagerFactory();
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+
+        Member member = entityManager.find(Member.class, 2);
+        member.setSkills(new HashMap<>());
+        member.getSkills().put("Java", 90);
+        member.getSkills().put("Golang", 80);
+        member.getSkills().put("PHP", 85);
+        entityManager.merge(member);
 
         entityTransaction.commit();
         entityManager.close();
