@@ -14,6 +14,11 @@
         <class>programmerzamannow.jpa.entity.Images</class>
         <class>programmerzamannow.jpa.entity.Member</class>
         <class>programmerzamannow.jpa.entity.Department</class>
+        <class>programmerzamannow.jpa.entity.Brand</class>
+        <class>programmerzamannow.jpa.entity.Product</class>
+        <class>programmerzamannow.jpa.entity.Credential</class>
+        <class>programmerzamannow.jpa.entity.User</class>
+        <class>programmerzamannow.jpa.entity.Wallet</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
