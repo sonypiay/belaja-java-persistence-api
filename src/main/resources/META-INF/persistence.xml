@@ -19,6 +19,9 @@
         <class>programmerzamannow.jpa.entity.Credential</class>
         <class>programmerzamannow.jpa.entity.User</class>
         <class>programmerzamannow.jpa.entity.Wallet</class>
+        <class>programmerzamannow.jpa.entity.Employee</class>
+        <class>programmerzamannow.jpa.entity.Manager</class>
+        <class>programmerzamannow.jpa.entity.VicePresident</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
