@@ -2,6 +2,8 @@ package programmerzamannow.jpa.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "products")
 public class Product {
@@ -19,6 +21,17 @@ public class Product {
             referencedColumnName = "id"
     )
     private Brand brand;
+
+    @ManyToMany(mappedBy = "likes")
+    private List<User> likedBy;
+
+    public List<User> getLikedBy() {
+        return likedBy;
+    }
+
+    public void setLikedBy(List<User> likedBy) {
+        this.likedBy = likedBy;
+    }
 
     public String getId() {
         return id;
