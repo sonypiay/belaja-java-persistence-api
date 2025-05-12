@@ -31,7 +31,7 @@
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/belajar_jpa"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mariadb://localhost:6033/belajar_jpa"/>
             <property name="jakarta.persistence.jdbc.user" value="root"/>
             <property name="jakarta.persistence.jdbc.password" value="12345678"/>
             <property name="hibernate.show_sql" value="true"/>
